@@ -36,16 +36,20 @@ npm run dev
 ## Tính năng đã tích hợp:
 
 ### 🎵 Audio Controls:
-- **Bật/Tắt**: Click vào audio toggle
+- **Auto-play**: Tự động bật nhạc khi vào trang
+- **Bật/Tắt**: Click vào audio toggle để điều khiển
 - **Loop**: Nhạc sẽ lặp lại tự động
-- **Volume**: Âm lượng 30% (không quá to)
-- **Auto-play**: Tự động phát khi bật (nếu trình duyệt cho phép)
+- **Dynamic Volume**: Âm lượng thay đổi theo thời gian
+  - 0-30s: Âm lượng nhẹ nhàng (10-20%)
+  - 30s+: Cao trào (40%)
+- **Smart Notification**: Thông báo nhẹ nhàng khi nhạc bắt đầu
 
 ### 🎨 UI Features:
 - **Visual feedback**: Icon loa thay đổi khi bật/tắt
-- **Text indicator**: Hiển thị "Nhạc nền" / "Tắt nhạc"
-- **Tooltip**: Hover để xem hướng dẫn
+- **Text indicator**: Hiển thị "Nhạc nền (tự động)" / "Tắt nhạc"
+- **Tooltip**: Hover để xem hướng dẫn chi tiết
 - **Color coding**: Vàng khi bật, xám khi tắt
+- **Auto notification**: Thông báo popup khi nhạc bắt đầu phát
 
 ### 🔧 Technical Details:
 - **File path**: `/audio/peace.mp3`

@@ -1881,12 +1881,12 @@ function Hero({ onScrollToEssay, onScrollToTimeline, onScrollToGallery, audioEna
                       className="data-[state=checked]:bg-yellow-500"
                     />
                     <span className="text-sm text-yellow-200/70">
-                      {audioEnabled ? 'Nhạc nền' : 'Tắt nhạc'}
+                      {audioEnabled ? 'Nhạc nền (tự động)' : 'Tắt nhạc'}
                     </span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{audioEnabled ? 'Tắt nhạc nền' : 'Bật nhạc nền - Peace.mp3'}</p>
+                  <p>{audioEnabled ? 'Tắt nhạc nền' : 'Bật nhạc nền - Peace.mp3 (tự động bật, cao trào ở 30s)'}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -2505,7 +2505,7 @@ function Footer() {
 }
 
 export default function HomePage() {
-  const [audioEnabled, setAudioEnabled] = useState(false);
+  const [audioEnabled, setAudioEnabled] = useState(true); // Tự động bật nhạc
   const [showChatbot, setShowChatbot] = useState(false);
   const [chatbotMessage, setChatbotMessage] = useState('');
   const essayRef = useRef<HTMLDivElement>(null);
@@ -2518,36 +2518,81 @@ export default function HomePage() {
   const prideRef = useRef<HTMLDivElement>(null);
   const actionRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const volumeIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Tự động bật nhạc khi vào trang
   useEffect(() => {
-    if (audioEnabled) {
-      // Tạo audio element nếu chưa có
-      if (!audioRef.current) {
-        const audio = new Audio('/audio/peace.mp3');
-        audio.loop = true;
-        audio.volume = 0.3; // Âm lượng 30%
-        audioRef.current = audio;
+    const initializeAudio = async () => {
+      try {
+        if (!audioRef.current) {
+          const audio = new Audio('/audio/peace.mp3');
+          audio.loop = true;
+          audio.volume = 0.1; // Bắt đầu với âm lượng thấp
+          audioRef.current = audio;
+          
+          // Thêm event listener để theo dõi thời gian phát
+          audio.addEventListener('timeupdate', () => {
+            if (audio.currentTime >= 30) {
+              // Tăng âm lượng lên cao trào ở 30s
+              if (audio.volume < 0.4) {
+                audio.volume = Math.min(audio.volume + 0.01, 0.4);
+              }
+            } else if (audio.currentTime < 30) {
+              // Âm lượng nhẹ nhàng trước 30s
+              audio.volume = Math.min(0.1 + (audio.currentTime / 30) * 0.1, 0.2);
+            }
+          });
+        }
+        
+        // Thử phát nhạc tự động
+        await audioRef.current.play();
+        console.log('Audio started automatically');
+        
+        // Hiển thị thông báo nhẹ nhàng
+        setTimeout(() => {
+          const notification = document.createElement('div');
+          notification.innerHTML = '🎵 Nhạc nền đã bắt đầu phát';
+          notification.className = 'fixed top-4 right-4 bg-yellow-500/90 text-black px-4 py-2 rounded-lg text-sm font-medium z-50 transition-all duration-300';
+          document.body.appendChild(notification);
+          
+          // Tự động ẩn sau 3 giây
+          setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => {
+              document.body.removeChild(notification);
+            }, 300);
+          }, 3000);
+        }, 1000);
+      } catch (error) {
+        console.log('Auto-play blocked, user interaction required');
+        // Không hiện alert, chỉ log để không làm phiền user
       }
-      
-      // Phát nhạc
-      audioRef.current.play().catch((error) => {
-        console.log('Cannot play audio:', error);
-        // Nếu không thể phát tự động, thông báo cho user
-        alert('Vui lòng click vào trang để phát nhạc (do chính sách trình duyệt)');
-      });
-    } else {
-      // Dừng nhạc
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    }
+    };
+
+    initializeAudio();
     
-    // Cleanup khi component unmount
+    // Cleanup
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
       }
+      if (volumeIntervalRef.current) {
+        clearInterval(volumeIntervalRef.current);
+      }
     };
+  }, []);
+
+  // Xử lý khi user toggle audio
+  useEffect(() => {
+    if (audioRef.current) {
+      if (audioEnabled) {
+        audioRef.current.play().catch((error) => {
+          console.log('Cannot play audio:', error);
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    }
   }, [audioEnabled]);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
