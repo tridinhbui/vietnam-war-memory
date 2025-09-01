@@ -1,0 +1,113 @@
+[
+  {
+    "id": "1945-independence",
+    "year": 1945,
+    "title": "Tuyên ngôn Độc lập",
+    "summary": "Tuyên ngôn Độc lập được đọc tại Quảng trường Ba Đình, đánh dấu sự kết thúc của chế độ thực dân Pháp và bắt đầu kỷ nguyên độc lập.",
+    "description": "Tuyên ngôn Độc lập được đọc tại Quảng trường Ba Đình, đánh dấu sự kết thúc của chế độ thực dân Pháp và bắt đầu kỷ nguyên độc lập.",
+    "image": "/images/milestones/1945-independence.jpg",
+    "source": "Lịch sử Việt Nam",
+    "provinceCode": "hanoi"
+  },
+  {
+    "id": "1954-dienbienphu",
+    "year": 1954,
+    "title": "Chiến thắng Điện Biên Phủ",
+    "summary": "Chiến thắng lịch sử tại Điện Biên Phủ, góp phần quan trọng vào việc thống nhất đất nước và khôi phục hòa bình.",
+    "description": "Chiến thắng lịch sử tại Điện Biên Phủ, góp phần quan trọng vào việc thống nhất đất nước và khôi phục hòa bình.",
+    "image": "/images/milestones/1954-dienbienphu.jpg",
+    "source": "Lịch sử Quân sự Việt Nam",
+    "provinceCode": "dienbien"
+  },
+  {
+    "id": "1975-liberation",
+    "year": 1975,
+    "title": "Giải phóng miền Nam",
+    "summary": "Miền Nam được hoàn toàn giải phóng, thống nhất đất nước sau 21 năm chiến tranh.",
+    "description": "Miền Nam được hoàn toàn giải phóng, thống nhất đất nước sau 21 năm chiến tranh.",
+    "image": "/images/milestones/1975-liberation.jpg",
+    "source": "Lịch sử Việt Nam hiện đại"
+  },
+  {
+    "id": "1986-doi-moi",
+    "year": 1986,
+    "title": "Đổi mới kinh tế",
+    "summary": "Đại hội Đảng lần thứ VI thông qua đường lối đổi mới, mở đầu thời kỳ phát triển kinh tế - xã hội mới.",
+    "description": "Đại hội Đảng lần thứ VI thông qua đường lối đổi mới, mở đầu thời kỳ phát triển kinh tế - xã hội mới.",
+    "image": "/images/milestones/1986-doi-moi.jpg",
+    "source": "Đảng Cộng sản Việt Nam"
+  },
+  {
+    "id": "1995-asean",
+    "year": 1995,
+    "title": "Gia nhập ASEAN",
+    "summary": "Việt Nam chính thức trở thành thành viên thứ 7 của Hiệp hội các Quốc gia Đông Nam Á.",
+    "description": "Việt Nam chính thức trở thành thành viên thứ 7 của Hiệp hội các Quốc gia Đông Nam Á.",
+    "image": "/images/milestones/1995-asean.jpg",
+    "source": "ASEAN"
+  },
+  {
+    "id": "2000-new-century",
+    "year": 2000,
+    "title": "Thế kỷ mới",
+    "summary": "Bước sang thế kỷ 21 với những thành tựu trong công nghiệp hóa, hiện đại hóa đất nước.",
+    "description": "Bước sang thế kỷ 21 với những thành tựu trong công nghiệp hóa, hiện đại hóa đất nước.",
+    "image": "/images/milestones/2000-new-century.jpg",
+    "source": "Chính phủ Việt Nam",
+    "provinceCode": "hochiminh"
+  },
+  {
+    "id": "2007-wto",
+    "year": 2007,
+    "title": "Gia nhập WTO",
+    "summary": "Việt Nam trở thành thành viên thứ 150 của Tổ chức Thương mại Thế giới, mở ra cơ hội hội nhập kinh tế quốc tế.",
+    "description": "Việt Nam trở thành thành viên thứ 150 của Tổ chức Thương mại Thế giới, mở ra cơ hội hội nhập kinh tế quốc tế.",
+    "image": "/images/milestones/2007-wto.jpg",
+    "source": "WTO"
+  },
+  {
+    "id": "2010-economic-growth",
+    "year": 2010,
+    "title": "Thành tựu kinh tế",
+    "summary": "GDP bình quân đầu người đạt mốc quan trọng, đánh dấu sự phát triển kinh tế vượt bậc.",
+    "description": "GDP bình quân đầu người đạt mốc quan trọng, đánh dấu sự phát triển kinh tế vượt bậc.",
+    "image": "/images/milestones/2010-economic-growth.jpg",
+    "source": "Ngân hàng Thế giới"
+  },
+  {
+    "id": "2015-unification",
+    "year": 2015,
+    "title": "50 năm thống nhất",
+    "summary": "Kỷ niệm 50 năm Ngày thống nhất đất nước, thể hiện sự đoàn kết và phát triển bền vững.",
+    "description": "Kỷ niệm 50 năm Ngày thống nhất đất nước, thể hiện sự đoàn kết và phát triển bền vững.",
+    "image": "/images/milestones/2015-unification.jpg",
+    "source": "Chính phủ Việt Nam"
+  },
+  {
+    "id": "2020-covid-success",
+    "year": 2020,
+    "title": "Thắng lợi chống dịch COVID-19",
+    "summary": "Việt Nam được thế giới ghi nhận về thành công trong phòng chống dịch bệnh, bảo vệ sức khỏe nhân dân.",
+    "description": "Việt Nam được thế giới ghi nhận về thành công trong phòng chống dịch bệnh, bảo vệ sức khỏe nhân dân.",
+    "image": "/images/milestones/2020-covid-success.jpg",
+    "source": "WHO"
+  },
+  {
+    "id": "2023-sustainable-development",
+    "year": 2023,
+    "title": "Phát triển bền vững",
+    "summary": "Việt Nam tiếp tục đẩy mạnh phát triển kinh tế xanh, chuyển đổi số và hội nhập quốc tế.",
+    "description": "Việt Nam tiếp tục đẩy mạnh phát triển kinh tế xanh, chuyển đổi số và hội nhập quốc tế.",
+    "image": "/images/milestones/2023-sustainable-development.jpg",
+    "source": "Liên Hợp Quốc"
+  },
+  {
+    "id": "2025-80th-anniversary",
+    "year": 2025,
+    "title": "80 năm Quốc khánh",
+    "summary": "Kỷ niệm 80 năm Ngày Quốc khánh 02/09, thể hiện truyền thống yêu nước và tinh thần đoàn kết dân tộc.",
+    "description": "Kỷ niệm 80 năm Ngày Quốc khánh 02/09, thể hiện truyền thống yêu nước và tinh thần đoàn kết dân tộc.",
+    "image": "/images/milestones/2025-80th-anniversary.jpg",
+    "source": "Chính phủ Việt Nam"
+  }
+]

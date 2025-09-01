@@ -1,0 +1,113 @@
+[
+  {
+    "id": "hanoi",
+    "name": "Hà Nội",
+    "name_en": "Hanoi",
+    "region": "north",
+    "centroid": [105.8342, 21.0278],
+    "population": 8246540,
+    "area": 3359,
+    "fact": "Thủ đô nghìn năm văn hiến với nhiều di tích lịch sử quý giá.",
+    "fact_en": "The thousand-year-old capital city with many valuable historical sites."
+  },
+  {
+    "id": "hochiminh",
+    "name": "TP. Hồ Chí Minh",
+    "name_en": "Ho Chi Minh City",
+    "region": "south",
+    "centroid": [106.6297, 10.8231],
+    "population": 8993082,
+    "area": 2061,
+    "fact": "Thành phố lớn nhất Việt Nam, trung tâm kinh tế và văn hóa phía Nam.",
+    "fact_en": "Vietnam's largest city, economic and cultural center of the South."
+  },
+  {
+    "id": "danang",
+    "name": "Đà Nẵng",
+    "name_en": "Da Nang",
+    "region": "central",
+    "centroid": [108.2022, 16.0544],
+    "population": 1191381,
+    "area": 1285,
+    "fact": "Thành phố trực thuộc Trung ương với bãi biển đẹp và cầu Rồng nổi tiếng.",
+    "fact_en": "Central city with beautiful beaches and the famous Dragon Bridge."
+  },
+  {
+    "id": "haiphong",
+    "name": "Hải Phòng",
+    "name_en": "Hai Phong",
+    "region": "north",
+    "centroid": [106.6881, 20.8449],
+    "population": 2027958,
+    "area": 1523,
+    "fact": "Thành phố cảng biển quan trọng nhất miền Bắc Việt Nam.",
+    "fact_en": "The most important seaport city in northern Vietnam."
+  },
+  {
+    "id": "cantho",
+    "name": "Cần Thơ",
+    "name_en": "Can Tho",
+    "region": "south",
+    "centroid": [105.7469, 10.0458],
+    "population": 1266540,
+    "area": 1409,
+    "fact": "Tây Đô - trung tâm văn hóa và kinh tế vùng Đồng bằng sông Cửu Long.",
+    "fact_en": "Western Capital - cultural and economic center of the Mekong Delta."
+  },
+  {
+    "id": "bienhoa",
+    "name": "Biên Hòa",
+    "name_en": "Bien Hoa",
+    "region": "south",
+    "centroid": [106.8236, 10.9507],
+    "population": 1104000,
+    "area": 264,
+    "fact": "Thành phố công nghiệp với nhiều khu công nghiệp lớn.",
+    "fact_en": "Industrial city with many large industrial zones."
+  },
+  {
+    "id": "hue",
+    "name": "Huế",
+    "name_en": "Hue",
+    "region": "central",
+    "centroid": [107.5950, 16.4637],
+    "population": 652572,
+    "area": 5043,
+    "fact": "Cố đô với nhiều di tích lịch sử như Hoàng thành Huế.",
+    "fact_en": "Ancient capital with many historical sites like Hue Imperial City."
+  },
+  {
+    "id": "nhatrang",
+    "name": "Nha Trang",
+    "name_en": "Nha Trang",
+    "region": "central",
+    "centroid": [109.1967, 12.2388],
+    "population": 422601,
+    "area": 251,
+    "fact": "Thành phố biển nổi tiếng với du lịch và hải sản.",
+    "fact_en": "Famous coastal city known for tourism and seafood."
+  },
+  {
+    "id": "quangninh",
+    "name": "Quảng Ninh",
+    "name_en": "Quang Ninh",
+    "region": "north",
+    "centroid": [107.2925, 20.9504],
+    "population": 1324000,
+    "area": 6102,
+    "fact": "Tỉnh có Vịnh Hạ Long - Di sản Thiên nhiên Thế giới.",
+    "fact_en": "Province with Ha Long Bay - UNESCO World Heritage Site."
+  },
+  {
+    "id": "dalat",
+    "name": "Đà Lạt",
+    "name_en": "Da Lat",
+    "region": "central",
+    "centroid": [108.4419, 11.9404],
+    "population": 673000,
+    "area": 393,
+    "fact": "Thành phố sương mù với khí hậu ôn đới và nhiều hoa đẹp.",
+    "fact_en": "Foggy city with temperate climate and beautiful flowers."
+  }
+]
+

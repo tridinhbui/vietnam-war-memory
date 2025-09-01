@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "timeline": "Dòng thời gian",
+    "map": "Bản đồ",
+    "gallery": "Thư viện",
+    "about": "Giới thiệu"
+  },
+  "hero": {
+    "title": "Chào mừng Quốc khánh Việt Nam",
+    "subtitle": "02 tháng 09 - Ngày Quốc khánh Việt Nam",
+    "description": "Khám phá hành trình lịch sử, văn hóa và phát triển của dân tộc Việt Nam qua các mốc thời gian quan trọng.",
+    "cta": {
+      "explore": "Khám phá",
+      "timeline": "Xem Dòng thời gian",
+      "map": "Xem Bản đồ"
+    }
+  },
+  "countdown": {
+    "title": "Đếm ngược đến Quốc khánh",
+    "days": "Ngày",
+    "hours": "Giờ",
+    "minutes": "Phút",
+    "seconds": "Giây"
+  },
+  "highlights": {
+    "timeline": {
+      "title": "Dòng thời gian",
+      "description": "Khám phá các mốc lịch sử quan trọng của Việt Nam từ 1945 đến nay."
+    },
+    "map": {
+      "title": "Bản đồ Việt Nam",
+      "description": "Khám phá các tỉnh thành với những thông tin thú vị."
+    },
+    "gallery": {
+      "title": "Thư viện ảnh",
+      "description": "Chia sẻ và xem những khoảnh khắc đẹp về Việt Nam."
+    },
+    "common": {
+      "explore": "Khám phá"
+    }
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Có lỗi xảy ra",
+    "retry": "Thử lại",
+    "discover": "Khám phá",
+    "explore_features": "Khám phá các tính năng và nội dung đặc biệt của chúng tôi",
+    "explore": "Khám phá"
+  },
+  "footer": {
+    "credits": "Được tạo với ❤️ cho ngày Quốc khánh Việt Nam",
+    "about": "Dự án này nhằm tôn vinh lịch sử và văn hóa Việt Nam"
+  },
+  "timeline": {
+    "scrollHint": "Cuộn để khám phá",
+    "expand": "Tìm hiểu thêm",
+    "collapse": "Thu gọn",
+    "onMap": "Xem trên bản đồ"
+  },
+  "map": {
+    "title": "Bản đồ Việt Nam",
+    "description": "Bản đồ tương tác Việt Nam",
+    "legend": {
+      "provinces": "Tỉnh thành",
+      "active": "Điểm nổi bật"
+    },
+    "mobileHint": "Chạm vào các điểm để xem thông tin"
+  },
+  "gallery": {
+    "title": "Văn Hóa Việt Nam",
+    "description": "Khám phá những nét đẹp văn hóa truyền thống và hiện đại của dân tộc Việt Nam",
+    "scrollHint": "Tự động cuộn • Di chuột để dừng",
+    "categories": {
+      "all": "Tất cả",
+      "fashion": "Trang phục",
+      "music": "Âm nhạc",
+      "trade": "Thương mại",
+      "agriculture": "Nông nghiệp",
+      "craft": "Thủ công",
+      "theater": "Sân khấu",
+      "festival": "Lễ hội"
+    }
+  },
+  "chart": {
+    "title": "Phát Triển Kinh Tế Việt Nam",
+    "description": "Dữ liệu từ Tổng cục Thống kê Việt Nam"
+  }
+}

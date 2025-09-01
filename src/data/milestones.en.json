@@ -1,0 +1,113 @@
+[
+  {
+    "id": "1945-independence",
+    "year": 1945,
+    "title": "Declaration of Independence",
+    "summary": "The Declaration of Independence was read at Ba Đình Square, marking the end of French colonial rule and the beginning of Vietnam's independence era.",
+    "description": "The Declaration of Independence was read at Ba Đình Square, marking the end of French colonial rule and the beginning of Vietnam's independence era.",
+    "image": "/images/milestones/1945-independence.jpg",
+    "source": "Vietnam History",
+    "provinceCode": "hanoi"
+  },
+  {
+    "id": "1954-dienbienphu",
+    "year": 1954,
+    "title": "Victory at Dien Bien Phu",
+    "summary": "The historic victory at Dien Bien Phu played a crucial role in unifying the country and restoring peace.",
+    "description": "The historic victory at Dien Bien Phu played a crucial role in unifying the country and restoring peace.",
+    "image": "/images/milestones/1954-dienbienphu.jpg",
+    "source": "Vietnam Military History",
+    "provinceCode": "dienbien"
+  },
+  {
+    "id": "1975-liberation",
+    "year": 1975,
+    "title": "Liberation of the South",
+    "summary": "The South was completely liberated, unifying the country after 21 years of war.",
+    "description": "The South was completely liberated, unifying the country after 21 years of war.",
+    "image": "/images/milestones/1975-liberation.jpg",
+    "source": "Modern Vietnam History"
+  },
+  {
+    "id": "1986-doi-moi",
+    "year": 1986,
+    "title": "Economic Renovation",
+    "summary": "The 6th Party Congress adopted the renovation policy, opening a new era of socio-economic development.",
+    "description": "The 6th Party Congress adopted the renovation policy, opening a new era of socio-economic development.",
+    "image": "/images/milestones/1986-doi-moi.jpg",
+    "source": "Communist Party of Vietnam"
+  },
+  {
+    "id": "1995-asean",
+    "year": 1995,
+    "title": "ASEAN Membership",
+    "summary": "Vietnam officially became the 7th member of the Association of Southeast Asian Nations.",
+    "description": "Vietnam officially became the 7th member of the Association of Southeast Asian Nations.",
+    "image": "/images/milestones/1995-asean.jpg",
+    "source": "ASEAN"
+  },
+  {
+    "id": "2000-new-century",
+    "year": 2000,
+    "title": "New Millennium",
+    "summary": "Entering the 21st century with achievements in industrialization and modernization.",
+    "description": "Entering the 21st century with achievements in industrialization and modernization.",
+    "image": "/images/milestones/2000-new-century.jpg",
+    "source": "Government of Vietnam",
+    "provinceCode": "hochiminh"
+  },
+  {
+    "id": "2007-wto",
+    "year": 2007,
+    "title": "WTO Accession",
+    "summary": "Vietnam became the 150th member of the World Trade Organization, opening international economic integration opportunities.",
+    "description": "Vietnam became the 150th member of the World Trade Organization, opening international economic integration opportunities.",
+    "image": "/images/milestones/2007-wto.jpg",
+    "source": "WTO"
+  },
+  {
+    "id": "2010-economic-growth",
+    "year": 2010,
+    "title": "Economic Achievements",
+    "summary": "GDP per capita reached an important milestone, marking remarkable economic development.",
+    "description": "GDP per capita reached an important milestone, marking remarkable economic development.",
+    "image": "/images/milestones/2010-economic-growth.jpg",
+    "source": "World Bank"
+  },
+  {
+    "id": "2015-unification",
+    "year": 2015,
+    "title": "50 Years of Reunification",
+    "summary": "Celebrating 50 years of national reunification, demonstrating unity and sustainable development.",
+    "description": "Celebrating 50 years of national reunification, demonstrating unity and sustainable development.",
+    "image": "/images/milestones/2015-unification.jpg",
+    "source": "Government of Vietnam"
+  },
+  {
+    "id": "2020-covid-success",
+    "year": 2020,
+    "title": "COVID-19 Success",
+    "summary": "Vietnam was internationally recognized for its success in disease prevention and protecting public health.",
+    "description": "Vietnam was internationally recognized for its success in disease prevention and protecting public health.",
+    "image": "/images/milestones/2020-covid-success.jpg",
+    "source": "WHO"
+  },
+  {
+    "id": "2023-sustainable-development",
+    "year": 2023,
+    "title": "Sustainable Development",
+    "summary": "Vietnam continues to promote green economy, digital transformation, and international integration.",
+    "description": "Vietnam continues to promote green economy, digital transformation, and international integration.",
+    "image": "/images/milestones/2023-sustainable-development.jpg",
+    "source": "United Nations"
+  },
+  {
+    "id": "2025-80th-anniversary",
+    "year": 2025,
+    "title": "80th National Day",
+    "summary": "Celebrating 80 years of National Day on September 2nd, reflecting the tradition of patriotism and national solidarity.",
+    "description": "Celebrating 80 years of National Day on September 2nd, reflecting the tradition of patriotism and national solidarity.",
+    "image": "/images/milestones/2025-80th-anniversary.jpg",
+    "source": "Government of Vietnam"
+  }
+]

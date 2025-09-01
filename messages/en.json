@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Home",
+    "timeline": "Timeline",
+    "map": "Map",
+    "gallery": "Gallery",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Welcome to Vietnam National Day",
+    "subtitle": "September 2nd - Vietnam National Day",
+    "description": "Explore the historical journey, culture, and development of the Vietnamese nation through important milestones.",
+    "cta": {
+      "explore": "Explore",
+      "timeline": "View Timeline",
+      "map": "View Map"
+    }
+  },
+  "countdown": {
+    "title": "Countdown to National Day",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "highlights": {
+    "timeline": {
+      "title": "Timeline",
+      "description": "Discover important historical milestones of Vietnam from 1945 to present."
+    },
+    "map": {
+      "title": "Vietnam Map",
+      "description": "Explore provinces and cities with interesting facts."
+    },
+    "gallery": {
+      "title": "Photo Gallery",
+      "description": "Share and view beautiful moments of Vietnam."
+    },
+    "common": {
+      "explore": "Explore"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again",
+    "discover": "Discover",
+    "explore_features": "Discover our features and special content",
+    "explore": "Explore"
+  },
+  "footer": {
+    "credits": "Made with ❤️ for Vietnam National Day",
+    "about": "This project aims to honor Vietnam's history and culture"
+  },
+  "timeline": {
+    "scrollHint": "Scroll to explore",
+    "expand": "Learn more",
+    "collapse": "Collapse",
+    "onMap": "View on map"
+  },
+  "map": {
+    "title": "Vietnam Map",
+    "description": "Interactive Vietnam map",
+    "legend": {
+      "provinces": "Provinces",
+      "active": "Highlighted"
+    },
+    "mobileHint": "Tap points to view information"
+  },
+  "gallery": {
+    "title": "Vietnamese Culture",
+    "description": "Discover the beauty of traditional and modern Vietnamese culture",
+    "scrollHint": "Auto-scroll • Hover to pause",
+    "categories": {
+      "all": "All",
+      "fashion": "Fashion",
+      "music": "Music",
+      "trade": "Trade",
+      "agriculture": "Agriculture",
+      "craft": "Crafts",
+      "theater": "Theater",
+      "festival": "Festivals"
+    }
+  },
+  "chart": {
+    "title": "Vietnam Economic Development",
+    "description": "Data from Vietnam General Statistics Office"
+  }
+}
