@@ -2528,6 +2528,7 @@ export default function HomePage() {
           const audio = new Audio('/audio/peace.mp3');
           audio.loop = true;
           audio.volume = 0.1; // Bắt đầu với âm lượng thấp
+          audio.muted = false; // Đảm bảo không bị mute
           audioRef.current = audio;
           
           // Thêm event listener để theo dõi thời gian phát
@@ -2542,33 +2543,84 @@ export default function HomePage() {
               audio.volume = Math.min(0.1 + (audio.currentTime / 30) * 0.1, 0.2);
             }
           });
+
+          // Thêm event listener để xử lý khi audio sẵn sàng
+          audio.addEventListener('canplaythrough', () => {
+            audio.play().catch(() => {
+              // Nếu autoplay bị chặn, thử lại khi user tương tác
+              const playOnInteraction = () => {
+                audio.play().then(() => {
+                  document.removeEventListener('click', playOnInteraction);
+                  document.removeEventListener('touchstart', playOnInteraction);
+                  document.removeEventListener('keydown', playOnInteraction);
+                }).catch(() => {});
+              };
+              
+              document.addEventListener('click', playOnInteraction);
+              document.addEventListener('touchstart', playOnInteraction);
+              document.addEventListener('keydown', playOnInteraction);
+            });
+          });
         }
         
-        // Thử phát nhạc tự động
-        await audioRef.current.play();
-        console.log('Audio started automatically');
+        // Thử phát nhạc tự động ngay lập tức
+        if (audioRef.current) {
+          await audioRef.current.play();
+          console.log('Audio started automatically');
+          
+          // Hiển thị thông báo nhẹ nhàng
+          setTimeout(() => {
+            const notification = document.createElement('div');
+            notification.innerHTML = '🎵 Nhạc nền đã bắt đầu phát';
+            notification.className = 'fixed top-4 right-4 bg-yellow-500/90 text-black px-4 py-2 rounded-lg text-sm font-medium z-50 transition-all duration-300';
+            document.body.appendChild(notification);
+            
+            // Tự động ẩn sau 3 giây
+            setTimeout(() => {
+              notification.style.opacity = '0';
+              setTimeout(() => {
+                if (document.body.contains(notification)) {
+                  document.body.removeChild(notification);
+                }
+              }, 300);
+            }, 3000);
+          }, 1000);
+        }
+      } catch (error) {
+        console.log('Auto-play blocked, will retry on user interaction');
         
-        // Hiển thị thông báo nhẹ nhàng
+        // Hiển thị thông báo nhẹ nhàng khi autoplay bị chặn
         setTimeout(() => {
           const notification = document.createElement('div');
-          notification.innerHTML = '🎵 Nhạc nền đã bắt đầu phát';
-          notification.className = 'fixed top-4 right-4 bg-yellow-500/90 text-black px-4 py-2 rounded-lg text-sm font-medium z-50 transition-all duration-300';
+          notification.innerHTML = '🎵 Click vào trang để bật nhạc nền';
+          notification.className = 'fixed top-4 right-4 bg-blue-500/90 text-white px-4 py-2 rounded-lg text-sm font-medium z-50 transition-all duration-300 cursor-pointer';
+          notification.onclick = () => {
+            if (audioRef.current) {
+              audioRef.current.play().catch(() => {});
+            }
+            notification.style.opacity = '0';
+            setTimeout(() => {
+              if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+              }
+            }, 300);
+          };
           document.body.appendChild(notification);
           
-          // Tự động ẩn sau 3 giây
+          // Tự động ẩn sau 5 giây
           setTimeout(() => {
             notification.style.opacity = '0';
             setTimeout(() => {
-              document.body.removeChild(notification);
+              if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+              }
             }, 300);
-          }, 3000);
-        }, 1000);
-      } catch (error) {
-        console.log('Auto-play blocked, user interaction required');
-        // Không hiện alert, chỉ log để không làm phiền user
+          }, 5000);
+        }, 2000);
       }
     };
 
+    // Khởi tạo audio ngay lập tức
     initializeAudio();
     
     // Cleanup
