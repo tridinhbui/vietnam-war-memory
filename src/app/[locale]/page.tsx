@@ -1870,16 +1870,23 @@ function Hero({ onScrollToEssay, onScrollToTimeline, onScrollToGallery, audioEna
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div className="flex items-center gap-2 text-yellow-200/70">
-                    {audioEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+                    {audioEnabled ? (
+                      <Volume2 className="w-4 h-4 text-yellow-400" />
+                    ) : (
+                      <VolumeX className="w-4 h-4 text-gray-400" />
+                    )}
                     <Switch
                       checked={audioEnabled}
                       onCheckedChange={setAudioEnabled}
                       className="data-[state=checked]:bg-yellow-500"
                     />
+                    <span className="text-sm text-yellow-200/70">
+                      {audioEnabled ? 'Nhạc nền' : 'Tắt nhạc'}
+                    </span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Âm thanh nền (mặc định tắt)</p>
+                  <p>{audioEnabled ? 'Tắt nhạc nền' : 'Bật nhạc nền - Peace.mp3'}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -2510,11 +2517,37 @@ export default function HomePage() {
   const homefrontRef = useRef<HTMLDivElement>(null);
   const prideRef = useRef<HTMLDivElement>(null);
   const actionRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     if (audioEnabled) {
-      console.log('Audio enabled (placeholder)');
+      // Tạo audio element nếu chưa có
+      if (!audioRef.current) {
+        const audio = new Audio('/audio/peace.mp3');
+        audio.loop = true;
+        audio.volume = 0.3; // Âm lượng 30%
+        audioRef.current = audio;
+      }
+      
+      // Phát nhạc
+      audioRef.current.play().catch((error) => {
+        console.log('Cannot play audio:', error);
+        // Nếu không thể phát tự động, thông báo cho user
+        alert('Vui lòng click vào trang để phát nhạc (do chính sách trình duyệt)');
+      });
+    } else {
+      // Dừng nhạc
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
     }
+    
+    // Cleanup khi component unmount
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
   }, [audioEnabled]);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
