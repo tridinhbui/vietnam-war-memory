@@ -783,7 +783,7 @@ function WallOfHonor() {
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-goldVN to-yellow-600 rounded-full flex items-center justify-center">
                     <span className="text-2xl font-bold text-black">
-                      {hero.name.split(' ').pop()?.charAt(0) || '?'}
+                      {hero.name && hero.name.split(' ').pop()?.charAt(0) || '?'}
                     </span>
                   </div>
                   
