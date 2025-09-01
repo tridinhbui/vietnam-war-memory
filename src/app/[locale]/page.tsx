@@ -329,18 +329,18 @@ const QUANG_TRI_STATS = [
 // ===== DỮ LIỆU MỚI =====
 
 const WALL_OF_HONOR = [
-  { id: 1, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Kháng chiến chống Pháp", years: "1945-1954", bio: "Những người con ưu tú đã hy sinh vì độc lập dân tộc trong cuộc kháng chiến chống thực dân Pháp...", image: "/images/milestones/geneva-1954.jpg" },
-  { id: 2, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Kháng chiến chống Mỹ", years: "1954-1975", bio: "Hàng triệu người con Việt Nam đã ngã xuống trong cuộc kháng chiến trường kỳ chống đế quốc Mỹ...", image: "/images/milestones/liberation-1975.jpg" },
-  { id: 3, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Thành Cổ Quảng Trị", years: "1972", bio: "81 ngày đêm máu lửa, hàng nghìn chiến sĩ đã hy sinh anh dũng để giữ vững lá cờ đỏ sao vàng...", image: "/images/milestones/quang-tri-citadel.jpg" },
-  { id: 4, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Điện Biên Phủ", years: "1954", bio: "Chiến thắng lịch sử Điện Biên Phủ với sự hy sinh của hàng nghìn chiến sĩ dũng cảm...", image: "/images/milestones/geneva-1954.jpg" },
-  { id: 5, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Tết Mậu Thân", years: "1968", bio: "Cuộc tổng tiến công và nổi dậy Tết Mậu Thân với sự hy sinh của nhiều chiến sĩ...", image: "/images/milestones/tet-offensive.jpg" },
-  { id: 6, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Hiệp định Paris", years: "1973", bio: "Những người đã hy sinh để đạt được hiệp định hòa bình Paris...", image: "/images/milestones/paris-agreement.jpg" },
-  { id: 7, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Giải phóng miền Nam", years: "1975", bio: "Chiến dịch Hồ Chí Minh lịch sử với sự hy sinh của nhiều chiến sĩ...", image: "/images/milestones/liberation-1975.jpg" },
-  { id: 8, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Thanh niên xung phong", years: "1965-1975", bio: "Những thanh niên trẻ tuổi đã hy sinh trên đường Trường Sơn...", image: "/images/milestones/dai-hoi-iii.jpg" },
-  { id: 9, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Dân công hỏa tuyến", years: "1965-1975", bio: "Những người dân công đã hy sinh để vận chuyển lương thực, vũ khí...", image: "/images/milestones/kills-1.jpg" },
-  { id: 10, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Y tá quân y", years: "1965-1975", bio: "Những y tá, bác sĩ đã hy sinh để cứu chữa thương binh...", image: "/images/milestones/liberation-1975.jpg" },
-  { id: 11, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Pháo binh", years: "1965-1975", bio: "Những chiến sĩ pháo binh đã hy sinh trong các trận đánh...", image: "/images/milestones/quang-tri-citadel.jpg" },
-  { id: 12, name: "Tưởng nhớ các anh hùng liệt sĩ", unit: "Trinh sát", years: "1965-1975", bio: "Những chiến sĩ trinh sát đã hy sinh để thu thập thông tin...", image: "/images/milestones/tet-offensive.jpg" }
+  { id: 1, name: "V - Tưởng nhớ các anh hùng liệt sĩ", unit: "Kháng chiến chống Pháp", years: "1945-1954", bio: "Những người con ưu tú đã hy sinh vì độc lập dân tộc trong cuộc kháng chiến chống thực dân Pháp...", image: "/images/milestones/geneva-1954.jpg" },
+  { id: 2, name: "I - Tưởng nhớ các anh hùng liệt sĩ", unit: "Kháng chiến chống Mỹ", years: "1954-1975", bio: "Hàng triệu người con Việt Nam đã ngã xuống trong cuộc kháng chiến trường kỳ chống đế quốc Mỹ...", image: "/images/milestones/liberation-1975.jpg" },
+  { id: 3, name: "E - Tưởng nhớ các anh hùng liệt sĩ", unit: "Thành Cổ Quảng Trị", years: "1972", bio: "81 ngày đêm máu lửa, hàng nghìn chiến sĩ đã hy sinh anh dũng để giữ vững lá cờ đỏ sao vàng...", image: "/images/milestones/quang-tri-citadel.jpg" },
+  { id: 4, name: "T - Tưởng nhớ các anh hùng liệt sĩ", unit: "Điện Biên Phủ", years: "1954", bio: "Chiến thắng lịch sử Điện Biên Phủ với sự hy sinh của hàng nghìn chiến sĩ dũng cảm...", image: "/images/milestones/geneva-1954.jpg" },
+  { id: 5, name: "N - Tưởng nhớ các anh hùng liệt sĩ", unit: "Tết Mậu Thân", years: "1968", bio: "Cuộc tổng tiến công và nổi dậy Tết Mậu Thân với sự hy sinh của nhiều chiến sĩ...", image: "/images/milestones/tet-offensive.jpg" },
+  { id: 6, name: "A - Tưởng nhớ các anh hùng liệt sĩ", unit: "Hiệp định Paris", years: "1973", bio: "Những người đã hy sinh để đạt được hiệp định hòa bình Paris...", image: "/images/milestones/paris-agreement.jpg" },
+  { id: 7, name: "M - Tưởng nhớ các anh hùng liệt sĩ", unit: "Giải phóng miền Nam", years: "1975", bio: "Chiến dịch Hồ Chí Minh lịch sử với sự hy sinh của nhiều chiến sĩ...", image: "/images/milestones/liberation-1975.jpg" },
+  { id: 8, name: "T - Tưởng nhớ các anh hùng liệt sĩ", unit: "Thanh niên xung phong", years: "1965-1975", bio: "Những thanh niên trẻ tuổi đã hy sinh trên đường Trường Sơn...", image: "/images/milestones/dai-hoi-iii.jpg" },
+  { id: 9, name: "U - Tưởng nhớ các anh hùng liệt sĩ", unit: "Dân công hỏa tuyến", years: "1965-1975", bio: "Những người dân công đã hy sinh để vận chuyển lương thực, vũ khí...", image: "/images/milestones/kills-1.jpg" },
+  { id: 10, name: "D - Tưởng nhớ các anh hùng liệt sĩ", unit: "Y tá quân y", years: "1965-1975", bio: "Những y tá, bác sĩ đã hy sinh để cứu chữa thương binh...", image: "/images/milestones/liberation-1975.jpg" },
+  { id: 11, name: "O - Tưởng nhớ các anh hùng liệt sĩ", unit: "Pháo binh", years: "1965-1975", bio: "Những chiến sĩ pháo binh đã hy sinh trong các trận đánh...", image: "/images/milestones/quang-tri-citadel.jpg" },
+  { id: 12, name: "V - Tưởng nhớ các anh hùng liệt sĩ", unit: "Trinh sát", years: "1965-1975", bio: "Những chiến sĩ trinh sát đã hy sinh để thu thập thông tin...", image: "/images/milestones/tet-offensive.jpg" }
 ];
 
 const QUOTES = [
@@ -1415,14 +1415,14 @@ function HomefrontAccordion() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="bg-gray-800 border-gray-700 overflow-hidden">
+              <Card className="bg-red-900/40 border-red-700 hover:border-goldVN overflow-hidden transition-all duration-300">
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full p-6 text-left hover:bg-gray-700/50 transition-colors duration-300"
+                  className="w-full p-6 text-left hover:bg-red-800/30 transition-colors duration-300"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-black">
+                      <div className="w-12 h-12 bg-gradient-to-br from-goldVN to-yellow-600 rounded-full flex items-center justify-center text-black">
                         {getIcon(item.title)}
                       </div>
                       
