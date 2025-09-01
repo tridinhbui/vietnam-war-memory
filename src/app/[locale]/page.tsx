@@ -2508,6 +2508,14 @@ export default function HomePage() {
   const [audioEnabled, setAudioEnabled] = useState(true); // Tự động bật nhạc
   const [showChatbot, setShowChatbot] = useState(false);
   const [chatbotMessage, setChatbotMessage] = useState('');
+  const [chatbotMessages, setChatbotMessages] = useState<Array<{id: string, text: string, isUser: boolean}>>([
+    {
+      id: '1',
+      text: 'Xin chào! Hỏi gì cũng được về lịch sử Việt Nam. Tôi có thể kể theo mạch hào hùng và vẫn đảm bảo chính xác.',
+      isUser: false
+    }
+  ]);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
   const essayRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -2519,6 +2527,22 @@ export default function HomePage() {
   const actionRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const volumeIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Tự động mở chatbot sau 3 giây
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowChatbot(true);
+    }, 3000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Auto-scroll to bottom when new messages arrive
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [chatbotMessages]);
 
   // Tự động bật nhạc khi vào trang
   useEffect(() => {
@@ -2732,7 +2756,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                className="absolute bottom-16 right-0 w-80 h-96 bg-red-900/95 backdrop-blur-sm rounded-lg border border-red-700 shadow-xl"
+                className="absolute bottom-16 right-0 w-80 md:w-96 h-[500px] bg-red-900/95 backdrop-blur-sm rounded-lg border border-red-700 shadow-xl"
               >
                 <div className="p-4 border-b border-red-700">
                   <div className="flex items-center justify-between">
@@ -2743,7 +2767,7 @@ export default function HomePage() {
                       onClick={() => setShowChatbot(false)}
                       variant="ghost"
                       size="sm"
-                      className="text-red-200 hover:text-white"
+                      className="text-red-200 hover:text-white hover:bg-red-800/50 rounded-full w-8 h-8 p-0"
                     >
                       ✕
                     </Button>
@@ -2753,15 +2777,28 @@ export default function HomePage() {
                   </p>
                 </div>
                 
-                <div className="p-4 h-64 overflow-y-auto">
-                  <div className="space-y-3">
-                    <div className="bg-red-800/50 rounded-lg p-3">
-                      <p className="text-white text-sm">
-                        Xin chào! Hỏi gì cũng được về lịch sử Việt Nam. Tôi có thể kể theo mạch hào hùng và vẫn đảm bảo chính xác.
-                      </p>
+                <div className="flex-1 overflow-hidden flex flex-col">
+                  <div ref={chatContainerRef} className="flex-1 p-4 overflow-y-auto max-h-80">
+                    <div className="space-y-3">
+                      {chatbotMessages.map((message) => (
+                        <div
+                          key={message.id}
+                          className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
+                        >
+                          <div
+                            className={`max-w-[80%] rounded-lg p-3 ${
+                              message.isUser
+                                ? 'bg-yellow-400 text-black'
+                                : 'bg-red-800/50 text-white'
+                            }`}
+                          >
+                            <p className="text-sm">{message.text}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                     
-                    <div className="space-y-2">
+                    <div className="mt-4 space-y-2">
                       <p className="text-yellow-400 text-sm font-medium">Câu hỏi gợi ý:</p>
                       {[
                         "Vì sao Thành cổ Quảng Trị gắn với hy sinh bi tráng?",
@@ -2771,7 +2808,26 @@ export default function HomePage() {
                       ].map((question, index) => (
                         <button
                           key={index}
-                          onClick={() => setChatbotMessage(question)}
+                          onClick={() => {
+                            setChatbotMessage(question);
+                            // Add user message
+                            const newMessage = {
+                              id: Date.now().toString(),
+                              text: question,
+                              isUser: true
+                            };
+                            setChatbotMessages(prev => [...prev, newMessage]);
+                            
+                            // Simulate bot response
+                            setTimeout(() => {
+                              const botResponse = {
+                                id: (Date.now() + 1).toString(),
+                                text: "Đây là một câu hỏi rất hay về lịch sử Việt Nam. Tôi sẽ kể cho bạn nghe một cách chi tiết và hào hùng...",
+                                isUser: false
+                              };
+                              setChatbotMessages(prev => [...prev, botResponse]);
+                            }, 1000);
+                          }}
                           className="block w-full text-left text-xs text-red-200 hover:text-yellow-400 p-2 rounded bg-red-800/30 hover:bg-red-700/50 transition-colors"
                         >
                           {question}
@@ -2779,30 +2835,67 @@ export default function HomePage() {
                       ))}
                     </div>
                   </div>
-                </div>
-                
-                <div className="p-4 border-t border-red-700">
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      value={chatbotMessage}
-                      onChange={(e: any) => setChatbotMessage(e.target.value)}
-                      placeholder="Hỏi về lịch sử Việt Nam..."
-                      className="flex-1 px-3 py-2 bg-red-800/50 border border-red-600 rounded-lg text-white placeholder-red-300 text-sm focus:outline-none focus:border-yellow-400"
-                      onKeyPress={(e: any) => {
-                        if (e.key === 'Enter') {
-                          // Handle send message
-                          setChatbotMessage('');
-                        }
-                      }}
-                    />
-                    <Button
-                      onClick={() => setChatbotMessage('')}
-                      size="sm"
-                      className="bg-yellow-400 text-black hover:bg-yellow-500"
-                    >
-                      Gửi
-                    </Button>
+                  
+                  <div className="p-4 border-t border-red-700">
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={chatbotMessage}
+                        onChange={(e: any) => setChatbotMessage(e.target.value)}
+                        placeholder="Hỏi về lịch sử Việt Nam..."
+                        className="flex-1 px-3 py-2 bg-red-800/50 border border-red-600 rounded-lg text-white placeholder-red-300 text-sm focus:outline-none focus:border-yellow-400"
+                        onKeyPress={(e: any) => {
+                          if (e.key === 'Enter' && chatbotMessage.trim()) {
+                            // Add user message
+                            const newMessage = {
+                              id: Date.now().toString(),
+                              text: chatbotMessage,
+                              isUser: true
+                            };
+                            setChatbotMessages(prev => [...prev, newMessage]);
+                            setChatbotMessage('');
+                            
+                            // Simulate bot response
+                            setTimeout(() => {
+                              const botResponse = {
+                                id: (Date.now() + 1).toString(),
+                                text: "Cảm ơn bạn đã hỏi! Đây là một câu hỏi thú vị về lịch sử Việt Nam. Tôi sẽ trả lời chi tiết cho bạn...",
+                                isUser: false
+                              };
+                              setChatbotMessages(prev => [...prev, botResponse]);
+                            }, 1000);
+                          }
+                        }}
+                      />
+                      <Button
+                        onClick={() => {
+                          if (chatbotMessage.trim()) {
+                            // Add user message
+                            const newMessage = {
+                              id: Date.now().toString(),
+                              text: chatbotMessage,
+                              isUser: true
+                            };
+                            setChatbotMessages(prev => [...prev, newMessage]);
+                            setChatbotMessage('');
+                            
+                            // Simulate bot response
+                            setTimeout(() => {
+                              const botResponse = {
+                                id: (Date.now() + 1).toString(),
+                                text: "Cảm ơn bạn đã hỏi! Đây là một câu hỏi thú vị về lịch sử Việt Nam. Tôi sẽ trả lời chi tiết cho bạn...",
+                                isUser: false
+                              };
+                              setChatbotMessages(prev => [...prev, botResponse]);
+                            }, 1000);
+                          }
+                        }}
+                        size="sm"
+                        className="bg-yellow-400 text-black hover:bg-yellow-500 px-4"
+                      >
+                        Gửi
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </motion.div>
